@@ -13,10 +13,17 @@ namespace SlimeTime.UI
         [Tooltip("Scene name of the level select screen to load on the Select Level button.")]
         [SerializeField] private string levelSelectSceneName = "LevelSelect";
 
+        [Tooltip("Optional animated scene transition. Falls back to immediate loading if omitted.")]
+        [SerializeField] private SceneTransitionAnimator sceneTransition;
+
         public void OnLevelSelectButton()
         {
             Time.timeScale = 1f;                          // in case it was left paused
-            SceneManager.LoadScene(levelSelectSceneName);
+
+            if (sceneTransition != null)
+                sceneTransition.LoadScene(levelSelectSceneName);
+            else
+                SceneManager.LoadScene(levelSelectSceneName);
         }
 
         public void OnExitButton()

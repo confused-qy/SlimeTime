@@ -11,6 +11,17 @@ public class SlimeMovement : MonoBehaviour
     [Header("跳跃")]
     [SerializeField] private float jumpForce = 8f;
 
+    [Header("音效")]
+    [Tooltip("史莱姆物体上的 Audio Source。不设置时会自动寻找。")]
+    [SerializeField] private AudioSource audioSource;
+
+    [Tooltip("成功起跳时播放的音效。")]
+    [SerializeField] private AudioClip jumpSound;
+
+    [Tooltip("跳跃音效的音量。")]
+    [Range(0f, 1f)]
+    [SerializeField] private float jumpSoundVolume = 0.8f;
+
     [Header("组件")]
     [SerializeField] private SpriteRenderer slimeRenderer;
 
@@ -31,6 +42,11 @@ public class SlimeMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         slimeCollider = GetComponent<Collider2D>();
         animator = GetComponentInChildren<Animator>();
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
         // 墙面的摩擦力可能抵消重力，导致角色按住方向键时贴在墙上。
         // 使用零摩擦材质，保留碰撞体原本的弹性设置。
@@ -90,6 +106,11 @@ public class SlimeMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isGrounded = false;
+
+            if (audioSource != null && jumpSound != null)
+            {
+                audioSource.PlayOneShot(jumpSound, jumpSoundVolume);
+            }
 
             if (animator != null)
             {

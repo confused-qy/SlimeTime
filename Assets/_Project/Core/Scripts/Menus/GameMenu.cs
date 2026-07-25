@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using TMPro;
+using UnityEngine.UI;
 using SlimeTime.Core;
 
 namespace SlimeTime.UI
@@ -21,7 +21,13 @@ namespace SlimeTime.UI
         [Header("Panel")]
         [Tooltip("The whole menu root, hidden during normal play.")]
         [SerializeField] GameObject panel;
-        [SerializeField] TMP_Text titleLabel;
+
+        [Header("Title Image")]
+        [Tooltip("The Image used to display the Pause, Win, or Lost title.")]
+        [SerializeField] Image titleImage;
+        [SerializeField] Sprite pauseTitleSprite;
+        [SerializeField] Sprite winTitleSprite;
+        [SerializeField] Sprite lostTitleSprite;
 
         [Header("Buttons (assign the button GameObjects)")]
         [SerializeField] GameObject resumeButton;       // Pause only
@@ -33,10 +39,16 @@ namespace SlimeTime.UI
         [Header("Scene")]
         [SerializeField] string levelSelectSceneName = "LevelSelect";
 
-        [Header("Titles")]
-        [SerializeField] string pauseTitle = "Paused";
-        [SerializeField] string winTitle = "You Win!";
-        [SerializeField] string lostTitle = "Game Over";
+        [Header("ESC 音效")]
+        [Tooltip("按 ESC 打开或关闭暂停菜单时播放的音效。")]
+        [SerializeField] AudioClip escapeSound;
+
+        [Tooltip("ESC 音效的音量。")]
+        [Range(0f, 1f)]
+        [SerializeField] float escapeSoundVolume = 1f;
+
+        [Tooltip("用于播放 ESC 音效的 Audio Source。不设置时会自动创建。")]
+        [SerializeField] AudioSource escapeAudioSource;
 
         Mode mode = Mode.None;
         string nextLevelSceneName = "";
@@ -46,6 +58,7 @@ namespace SlimeTime.UI
             //SlimeTime.Core.GameProgress.ResetAll();   // TEMP: reset unlock progress for testing
             if (panel != null) panel.SetActive(false);
             Time.timeScale = 1f;
+            PrepareEscapeAudioSource();
         }
 
         void OnEnable()
@@ -67,9 +80,36 @@ namespace SlimeTime.UI
             var kb = Keyboard.current;
             if (kb == null || !kb.escapeKey.wasPressedThisFrame) return;
 
-            if (mode == Mode.Pause) Resume();
-            else if (mode == Mode.None) Show(Mode.Pause);
+            if (mode == Mode.Pause)
+            {
+                PlayEscapeSound();
+                Resume();
+            }
+            else if (mode == Mode.None)
+            {
+                PlayEscapeSound();
+                Show(Mode.Pause);
+            }
             // Esc is ignored while Win/Lost is showing (the round is over).
+        }
+
+        void PrepareEscapeAudioSource()
+        {
+            if (escapeAudioSource == null)
+                escapeAudioSource = GetComponent<AudioSource>();
+
+            if (escapeAudioSource == null)
+                escapeAudioSource = gameObject.AddComponent<AudioSource>();
+
+            escapeAudioSource.playOnAwake = false;
+            escapeAudioSource.loop = false;
+            escapeAudioSource.spatialBlend = 0f;
+        }
+
+        void PlayEscapeSound()
+        {
+            if (escapeAudioSource != null && escapeSound != null)
+                escapeAudioSource.PlayOneShot(escapeSound, escapeSoundVolume);
         }
 
         void HandleWin(string nextScene)
@@ -91,10 +131,13 @@ namespace SlimeTime.UI
             if (panel != null) panel.SetActive(true);
             Time.timeScale = 0f;   // freeze the game in every mode
 
-            if (titleLabel != null)
-                titleLabel.text = m == Mode.Pause ? pauseTitle
-                                : m == Mode.Win ? winTitle
-                                : lostTitle;
+            if (titleImage != null)
+            {
+                titleImage.sprite = m == Mode.Pause ? pauseTitleSprite
+                                  : m == Mode.Win ? winTitleSprite
+                                  : lostTitleSprite;
+                titleImage.enabled = titleImage.sprite != null;
+            }
 
             SetActive(resumeButton,      m == Mode.Pause);
             SetActive(retryButton,       m == Mode.Lost);

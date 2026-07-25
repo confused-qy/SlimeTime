@@ -37,6 +37,8 @@ namespace SlimeTime.UI
         [SerializeField] private Button backButton;
         [Tooltip("Scene to load when Back is pressed.")]
         [SerializeField] private string mainMenuSceneName = "MainMenu";
+        [Tooltip("Optional animated scene transition. Falls back to immediate loading if omitted.")]
+        [SerializeField] private SceneTransitionAnimator sceneTransition;
 
         void Start()
         {
@@ -72,7 +74,11 @@ namespace SlimeTime.UI
         {
             if (string.IsNullOrEmpty(mainMenuSceneName)) return;
             Time.timeScale = 1f;
-            SceneManager.LoadScene(mainMenuSceneName);
+
+            if (sceneTransition != null)
+                sceneTransition.LoadScene(mainMenuSceneName);
+            else
+                SceneManager.LoadScene(mainMenuSceneName);
         }
 
         void LoadScene(string sceneName)
@@ -83,4 +89,3 @@ namespace SlimeTime.UI
         }
     }
 }
-
