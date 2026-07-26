@@ -576,7 +576,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.000023841858}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -586,7 +586,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 18.20999, y: 17.050013}
+  m_Size: {x: 18.20999, y: 17.049988}
   m_EdgeRadius: 0
 --- !u!212 &107362395
 SpriteRenderer:
@@ -4220,7 +4220,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.000023841858}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4230,7 +4230,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 18.17002, y: 16.919977}
+  m_Size: {x: 18.17002, y: 16.920002}
   m_EdgeRadius: 0
 --- !u!212 &1521442588
 SpriteRenderer:
@@ -5067,7 +5067,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.000011920929}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5374,11 +5374,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4048844824536409872, guid: c5009628fc34dcb4db21ff6c2fc2a9da, type: 3}
       propertyPath: timeLimit
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4482948619653035783, guid: c5009628fc34dcb4db21ff6c2fc2a9da, type: 3}
       propertyPath: m_Name
       value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319001363130294277, guid: c5009628fc34dcb4db21ff6c2fc2a9da, type: 3}
+      propertyPath: secondsToShrinkToZero
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8958870067390848753, guid: c5009628fc34dcb4db21ff6c2fc2a9da, type: 3}
       propertyPath: m_LocalPosition.x
