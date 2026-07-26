@@ -25,6 +25,10 @@ namespace SlimeTime.UI
             [NonSerialized] public RectTransform animatedRect;
             [NonSerialized] public Vector3 originalScale;
             [NonSerialized] public Quaternion originalRotation;
+            [NonSerialized] public RectTransform borderRect;
+            [NonSerialized] public Vector3 borderOriginalScale;
+            [NonSerialized] public Quaternion borderOriginalRotation;
+            [NonSerialized] public bool borderFollowsButtonAutomatically;
             [NonSerialized] public Coroutine animation;
         }
 
@@ -68,6 +72,19 @@ namespace SlimeTime.UI
                 entry.animatedRect = entry.button.transform as RectTransform;
                 entry.originalScale = entry.animatedRect.localScale;
                 entry.originalRotation = entry.animatedRect.localRotation;
+
+                if (entry.whiteBorder != null)
+                {
+                    entry.borderRect = entry.whiteBorder.transform as RectTransform;
+                    entry.borderFollowsButtonAutomatically =
+                        entry.whiteBorder.transform.IsChildOf(entry.animatedRect);
+
+                    if (entry.borderRect != null)
+                    {
+                        entry.borderOriginalScale = entry.borderRect.localScale;
+                        entry.borderOriginalRotation = entry.borderRect.localRotation;
+                    }
+                }
 
                 SetBorderVisible(entry, false);
                 RegisterPointerEvents(entry);
@@ -126,6 +143,7 @@ namespace SlimeTime.UI
 
             entry.animatedRect.localScale = entry.originalScale;
             entry.animatedRect.localRotation = entry.originalRotation;
+            RestoreBorderTransform(entry);
             entry.animation = StartCoroutine(Bounce(entry));
         }
 
@@ -146,6 +164,13 @@ namespace SlimeTime.UI
                 entry.animatedRect.localScale = entry.originalScale * scale;
                 entry.animatedRect.localRotation =
                     entry.originalRotation * Quaternion.Euler(0f, 0f, angle);
+
+                if (ShouldAnimateBorderSeparately(entry))
+                {
+                    entry.borderRect.localScale = entry.borderOriginalScale * scale;
+                    entry.borderRect.localRotation =
+                        entry.borderOriginalRotation * Quaternion.Euler(0f, 0f, angle);
+                }
 
                 yield return null;
             }
@@ -171,6 +196,23 @@ namespace SlimeTime.UI
 
             entry.animatedRect.localScale = entry.originalScale;
             entry.animatedRect.localRotation = entry.originalRotation;
+            RestoreBorderTransform(entry);
+        }
+
+        private static bool ShouldAnimateBorderSeparately(ButtonEntry entry)
+        {
+            return entry.borderRect != null && !entry.borderFollowsButtonAutomatically;
+        }
+
+        private static void RestoreBorderTransform(ButtonEntry entry)
+        {
+            if (!ShouldAnimateBorderSeparately(entry))
+            {
+                return;
+            }
+
+            entry.borderRect.localScale = entry.borderOriginalScale;
+            entry.borderRect.localRotation = entry.borderOriginalRotation;
         }
 
         private void OnDisable()

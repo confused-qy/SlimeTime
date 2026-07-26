@@ -4,26 +4,44 @@ using UnityEngine.SceneManagement;
 namespace SlimeTime.UI
 {
     /// <summary>
-    /// Main menu buttons: Play loads the first level, Select Level opens the level
-    /// select screen, Exit quits the game. Wire OnPlayButton / OnLevelSelectButton /
-    /// OnExitButton to the buttons' OnClick events.
+    /// Main menu buttons: Credits opens the credits scene and Exit quits the game.
     /// </summary>
     public class MainMenu : MonoBehaviour
     {
-        [Tooltip("Scene name of the level select screen to load on the Select Level button.")]
-        [SerializeField] private string levelSelectSceneName = "LevelSelect";
+        [Header("场景")]
+        [Tooltip("点击 Play 按钮后加载的关卡选择场景名称。")]
+        [SerializeField] private string levelSelectionSceneName = "LevelSelect";
 
-        [Tooltip("Optional animated scene transition. Falls back to immediate loading if omitted.")]
+        [Tooltip("点击 Credits 按钮后加载的场景名称。")]
+        [SerializeField] private string creditsSceneName = "Credits";
+
+        [Tooltip("场景切换动画。不设置时会直接加载场景。")]
         [SerializeField] private SceneTransitionAnimator sceneTransition;
 
-        public void OnLevelSelectButton()
+        public void OnLevelSelectionButton()
         {
-            Time.timeScale = 1f;                          // in case it was left paused
+            LoadScene(levelSelectionSceneName);
+        }
+
+        public void OnCreditsButton()
+        {
+            LoadScene(creditsSceneName);
+        }
+
+        private void LoadScene(string sceneName)
+        {
+            if (string.IsNullOrEmpty(sceneName))
+            {
+                Debug.LogError($"{nameof(MainMenu)} 没有设置需要加载的场景名称。", this);
+                return;
+            }
+
+            Time.timeScale = 1f;
 
             if (sceneTransition != null)
-                sceneTransition.LoadScene(levelSelectSceneName);
+                sceneTransition.LoadScene(sceneName);
             else
-                SceneManager.LoadScene(levelSelectSceneName);
+                SceneManager.LoadScene(sceneName);
         }
 
         public void OnExitButton()

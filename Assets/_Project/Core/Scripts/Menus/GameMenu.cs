@@ -50,6 +50,21 @@ namespace SlimeTime.UI
         [Tooltip("用于播放 ESC 音效的 Audio Source。不设置时会自动创建。")]
         [SerializeField] AudioSource escapeAudioSource;
 
+        [Header("结果音效")]
+        [Tooltip("成功通过关卡时播放的音效。")]
+        [SerializeField] AudioClip winSound;
+
+        [Tooltip("关卡成功音效的音量。")]
+        [Range(0f, 1f)]
+        [SerializeField] float winSoundVolume = 1f;
+
+        [Tooltip("关卡失败时播放的音效。")]
+        [SerializeField] AudioClip lostSound;
+
+        [Tooltip("关卡失败音效的音量。")]
+        [Range(0f, 1f)]
+        [SerializeField] float lostSoundVolume = 1f;
+
         Mode mode = Mode.None;
         string nextLevelSceneName = "";
 
@@ -108,20 +123,27 @@ namespace SlimeTime.UI
 
         void PlayEscapeSound()
         {
-            if (escapeAudioSource != null && escapeSound != null)
-                escapeAudioSource.PlayOneShot(escapeSound, escapeSoundVolume);
+            PlayMenuSound(escapeSound, escapeSoundVolume);
+        }
+
+        void PlayMenuSound(AudioClip sound, float volume)
+        {
+            if (escapeAudioSource != null && sound != null)
+                escapeAudioSource.PlayOneShot(sound, volume);
         }
 
         void HandleWin(string nextScene)
         {
             if (mode == Mode.Win || mode == Mode.Lost) return;  // already ended
             nextLevelSceneName = nextScene;
+            PlayMenuSound(winSound, winSoundVolume);
             Show(Mode.Win);
         }
 
         void HandleLost()
         {
             if (mode == Mode.Win || mode == Mode.Lost) return;  // already ended
+            PlayMenuSound(lostSound, lostSoundVolume);
             Show(Mode.Lost);
         }
 

@@ -138,7 +138,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.1, y: 1.1}
   m_EdgeRadius: 0
 --- !u!114 &2707337744173215822
 MonoBehaviour:
@@ -152,6 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a131ed071090f44f9af325f95dac4f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeReverseGate
+  fitColliderToSprite: 1
+  triggerPadding: 0.05
   timer: {fileID: 0}
-  cooldown: 0.3
+  cooldown: 0.1
   passesBeforeDisappear: 1
+  triggerSound: {fileID: 8300000, guid: 39ba562fe419f4bed9d86498b310e583, type: 3}
+  triggerSoundVolume: 1

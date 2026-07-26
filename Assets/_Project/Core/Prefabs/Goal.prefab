@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a142029c95422fc40b2ddeecbcd056d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoalZone
-  requiredTime: 1
+  requiredTime: 0.2
   nextLevelSceneName: 
   loadNextLevelOnWin: 0
 --- !u!212 &765680451224076772

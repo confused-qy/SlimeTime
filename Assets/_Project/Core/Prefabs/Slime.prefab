@@ -306,11 +306,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16cec615c90eb4aa7927a52b7cf99b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlimeMovement
-  moveSpeed: 2.5
+  moveSpeed: 4
   jumpForce: 12.5
   audioSource: {fileID: 4361442650493827534}
   jumpSound: {fileID: 8300000, guid: 571cd720b7553499ba081983fe604577, type: 3}
-  jumpSoundVolume: 0.8
+  jumpSoundVolume: 1
   slimeRenderer: {fileID: 9040759612793156909}
 --- !u!114 &6319001363130294277
 MonoBehaviour:
@@ -327,8 +327,8 @@ MonoBehaviour:
   timer: {fileID: 4048844824536409872}
   secondsToShrinkToZero: 10
   smoothing: 5
-  crushTime: 2
-  sideThreshold: 0.5
+  crushTime: 0.5
+  sideThreshold: 0.2
 --- !u!82 &4361442650493827534
 AudioSource:
   m_ObjectHideFlags: 0
@@ -537,7 +537,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2149378067218927455, guid: 7f7a2455d7b6b422a9702a414f5edaa3, type: 2}
+  - {fileID: 4628113844373564307, guid: a20e20466142c4389ab153d7cc8ce014, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -581,10 +581,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.0
+  m_text: 9.23
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7f7a2455d7b6b422a9702a414f5edaa3, type: 2}
-  m_sharedMaterial: {fileID: 2149378067218927455, guid: 7f7a2455d7b6b422a9702a414f5edaa3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a20e20466142c4389ab153d7cc8ce014, type: 2}
+  m_sharedMaterial: {fileID: 4628113844373564307, guid: a20e20466142c4389ab153d7cc8ce014, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -608,8 +608,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
