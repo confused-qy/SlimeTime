@@ -12,10 +12,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2888359230797625490, guid: 35d59c9a19f6003459f925dd7b546df1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4085399948833106466, guid: 1125daac6be7c144388cec071ada5da1, type: 3}
     - target: {fileID: 3530245066492616614, guid: 35d59c9a19f6003459f925dd7b546df1, type: 3}
       propertyPath: winTitleSprite
       value: 
-      objectReference: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 4085399948833106466, guid: 1125daac6be7c144388cec071ada5da1, type: 3}
     - target: {fileID: 3530245066492616614, guid: 35d59c9a19f6003459f925dd7b546df1, type: 3}
       propertyPath: nextLevelButton
       value: 

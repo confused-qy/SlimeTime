@@ -814,6 +814,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &269718862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4994346124365970947, guid: 8c7cc58357ac6df4c8b21f48455eafe4, type: 3}
+  m_PrefabInstance: {fileID: 1328405471}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &352622129
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,6 +2350,17 @@ Transform:
   - {fileID: 1976798301}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &712656814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7934086931378197016, guid: 8c7cc58357ac6df4c8b21f48455eafe4, type: 3}
+  m_PrefabInstance: {fileID: 1328405471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &732767514
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,6 +2500,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &739847122 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3611804406313730882, guid: 8c7cc58357ac6df4c8b21f48455eafe4, type: 3}
+  m_PrefabInstance: {fileID: 1328405471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &803844239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5320,6 +5347,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8532553042123654415, guid: 8c7cc58357ac6df4c8b21f48455eafe4, type: 3}
+      propertyPath: buttons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8532553042123654415, guid: 8c7cc58357ac6df4c8b21f48455eafe4, type: 3}
+      propertyPath: buttons.Array.data[2].button
+      value: 
+      objectReference: {fileID: 739847122}
+    - target: {fileID: 8532553042123654415, guid: 8c7cc58357ac6df4c8b21f48455eafe4, type: 3}
+      propertyPath: buttons.Array.data[3].button
+      value: 
+      objectReference: {fileID: 712656814}
+    - target: {fileID: 8532553042123654415, guid: 8c7cc58357ac6df4c8b21f48455eafe4, type: 3}
+      propertyPath: buttons.Array.data[2].whiteBorder
+      value: 
+      objectReference: {fileID: 269718862}
+    - target: {fileID: 8532553042123654415, guid: 8c7cc58357ac6df4c8b21f48455eafe4, type: 3}
+      propertyPath: buttons.Array.data[3].whiteBorder
+      value: 
+      objectReference: {fileID: 1697163184}
     - target: {fileID: 8887731410514796765, guid: 8c7cc58357ac6df4c8b21f48455eafe4, type: 3}
       propertyPath: m_Name
       value: LastLevelMenuCanvas
@@ -6441,6 +6488,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &1697163184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6859135638735841904, guid: 8c7cc58357ac6df4c8b21f48455eafe4, type: 3}
+  m_PrefabInstance: {fileID: 1328405471}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1700284958
 GameObject:
   m_ObjectHideFlags: 0

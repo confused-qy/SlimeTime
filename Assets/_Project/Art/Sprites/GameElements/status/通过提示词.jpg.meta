@@ -1,19 +1,28 @@
 fileFormatVersion: 2
-guid: 5665eefb6221646d6b9067050bb69d61
+guid: 1125daac6be7c144388cec071ada5da1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6337820961760074029
-    second: Slime has conquered all!_0
+      213: 4085399948833106466
+    second: "\u901A\u8FC7\u63D0\u793A\u8BCD_0"
   - first:
-      213: -1941380316341594138
-    second: Slime has conquered all!_1
+      213: 1418576665028042968
+    second: "\u901A\u8FC7\u63D0\u793A\u8BCD_1"
   - first:
-      213: 3104325339489603884
-    second: Slime has conquered all!_2
+      213: 9141055751762047494
+    second: "\u901A\u8FC7\u63D0\u793A\u8BCD_2"
   - first:
-      213: 5676704901642210549
-    second: Slime has conquered all!_3
+      213: 8566097372957261106
+    second: "\u901A\u8FC7\u63D0\u793A\u8BCD_3"
+  - first:
+      213: 9207753851809006888
+    second: "\u901A\u8FC7\u63D0\u793A\u8BCD_4"
+  - first:
+      213: -7012127062154807509
+    second: "\u901A\u8FC7\u63D0\u793A\u8BCD_5"
+  - first:
+      213: 6534856800951072393
+    second: "\u901A\u8FC7\u63D0\u793A\u8BCD_6"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,24 +114,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Slime has conquered all!_0
+      name: "\u901A\u8FC7\u63D0\u793A\u8BCD_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d6244c1a698b08a0800000000000000
-      internalID: -6337820961760074029
+      spriteID: 22aa89bab9142b830800000000000000
+      internalID: 4085399948833106466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime has conquered all!_1
+      name: "\u901A\u8FC7\u63D0\u793A\u8BCD_1"
       rect:
         serializedVersion: 2
         x: 1493
@@ -159,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e7168e53e4de05e0800000000000000
-      internalID: -1941380316341594138
+      spriteID: 8d0a7adf5fbcfa310800000000000000
+      internalID: 1418576665028042968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime has conquered all!_2
+      name: "\u901A\u8FC7\u63D0\u793A\u8BCD_2"
       rect:
         serializedVersion: 2
         x: 2218
@@ -181,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c219587e277c41b20800000000000000
-      internalID: 3104325339489603884
+      spriteID: 60271db56cd8bde70800000000000000
+      internalID: 9141055751762047494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Slime has conquered all!_3
+      name: "\u901A\u8FC7\u63D0\u793A\u8BCD_3"
       rect:
         serializedVersion: 2
         x: 4147
@@ -203,8 +199,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5fc4a151805b7ce40800000000000000
-      internalID: 5676704901642210549
+      spriteID: 23d3682fc24e0e670800000000000000
+      internalID: 8566097372957261106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u901A\u8FC7\u63D0\u793A\u8BCD_4"
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 1610
+        width: 701
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8258f4ce75388cf70800000000000000
+      internalID: 9207753851809006888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u901A\u8FC7\u63D0\u793A\u8BCD_5"
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 1611
+        width: 338
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b27fb5cb69befae90800000000000000
+      internalID: -7012127062154807509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u901A\u8FC7\u63D0\u793A\u8BCD_6"
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 1607
+        width: 743
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 986fbb623a970ba50800000000000000
+      internalID: 6534856800951072393
       vertices: []
       indices: 
       edges: []
@@ -213,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 77248c26cade8f94a8b166e844516aee
+    spriteID: c91ed27ca71d03242a3c7f2b7fe4117e
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Slime has conquered all!_0: -6337820961760074029
-      Slime has conquered all!_1: -1941380316341594138
-      Slime has conquered all!_2: 3104325339489603884
-      Slime has conquered all!_3: 5676704901642210549
+      "\u901A\u8FC7\u63D0\u793A\u8BCD_0": 4085399948833106466
+      "\u901A\u8FC7\u63D0\u793A\u8BCD_1": 1418576665028042968
+      "\u901A\u8FC7\u63D0\u793A\u8BCD_2": 9141055751762047494
+      "\u901A\u8FC7\u63D0\u793A\u8BCD_3": 8566097372957261106
+      "\u901A\u8FC7\u63D0\u793A\u8BCD_4": 9207753851809006888
+      "\u901A\u8FC7\u63D0\u793A\u8BCD_5": -7012127062154807509
+      "\u901A\u8FC7\u63D0\u793A\u8BCD_6": 6534856800951072393
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
